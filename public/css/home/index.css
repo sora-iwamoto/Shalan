@@ -1,0 +1,16 @@
+.post {
+  max-width: 55%;
+  border: 1px solid #dcdcdc;
+  margin: 0 auto;
+}
+.post .poster {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: MS PGothic;
+}
+.post .postDate {
+  font-size: 13px;
+  color: #888888;
+}
+
+/*# sourceMappingURL=index.css.map */

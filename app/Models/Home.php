@@ -15,4 +15,10 @@ class Home extends Model
         return $this->belongsTo(User::class);
     }
     
+    public function getPostDate () {
+        $postData = $this->orderBy('created_at', 'DESC')->get();
+        
+        return $postData;
+    }
+    
 }

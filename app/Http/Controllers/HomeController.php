@@ -8,7 +8,7 @@ use App\Models\Home;
 class HomeController extends Controller
 {
     public function index (Home $home) {
-        $homes = $home->get();
+        $homes = $home->getPostDate();
         return view('homes/index')->with(['homes' => $homes]);  
     }
 }

@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('css/common.css')}}"/>
+        @stack('home_index_styles')
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -19,7 +20,6 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}
