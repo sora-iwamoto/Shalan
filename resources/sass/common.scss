@@ -1,0 +1,53 @@
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .modal-back {
+        height: 100vh;
+        position: absolute;
+        width: 100%;
+        background-color:rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+        background: white;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        height: 300px;
+        border-radius : 5%;
+        .closeMark {
+            font-weight: bold;
+            font-size: 200%;
+            position: absolute;
+            left: 15px;
+            cursor: pointer;
+        }
+        .modal-body {
+        height: 240px;
+        width: 400px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        resize: none;
+        border: none;
+        }
+        .modal-submit {
+        height: 40px;
+        width: 70px;
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        border-radius: 40%;
+        text-align: center;
+        cursor: pointer;
+        padding: 11px 10px;
+        background: #a087ff;
+        color: #ffffff;
+        }
+    }
+}
