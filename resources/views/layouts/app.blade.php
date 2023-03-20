@@ -16,6 +16,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/common.js') }}"></script>
+        @stack('home_index_script')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
