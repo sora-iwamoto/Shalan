@@ -11,4 +11,8 @@ class HomeController extends Controller
         $homes = $home->getPostDate();
         return view('homes/index')->with(['homes' => $homes]);  
     }
+    public function delete (Home $home) {
+        $home->delete();
+        return redirect('/home');  
+    }
 }
