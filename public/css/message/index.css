@@ -1,0 +1,84 @@
+.message {
+  height: calc(100vh - 64px - 5px);
+  display: flex;
+  overflow: hidden;
+}
+.message .messageUserBar {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-right: 1px solid #dcdcdc;
+}
+.message .messageMain {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.message .messageMain .messageTitle {
+  height: 15%;
+}
+.message .messageMain .messageBody {
+  height: 75%;
+  overflow: auto;
+}
+.message .messageMain .messageBody .eachMessage {
+  margin-bottom: 30px;
+}
+.message .messageMain .messageBody .eachMessage .recipientName {
+  font-size: 8px;
+  color: #9D9087;
+}
+.message .messageMain .messageBody .eachMessage .messageContent {
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+.message .messageMain .messageBody .eachMessage .messageContentrignt {
+  background-color: #ED1A3D;
+  color: white;
+  margin-left: auto;
+  margin-right: 0;
+}
+.message .messageMain .messageBody .eachMessage .messageContentleft {
+  background-color: #dcdcdc;
+}
+.message .messageMain .messageBody .eachMessage .submitTime {
+  text-align: center;
+  color: #4D4D4F;
+  font-size: 8px;
+}
+.message .messageMain .messageBody .messagerignt {
+  text-align: right;
+}
+.message .messageBox {
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  width: 73%;
+  max-width: 68%;
+}
+.message .messageBox .textBox {
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translateY(-50%);
+  width: 75%;
+  height: 80%;
+  width: 75%;
+  height: 80%;
+  resize: none;
+  border-radius: 20px;
+}
+.message .messageBox .submitButton {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+}
+
+/*# sourceMappingURL=index.css.map */

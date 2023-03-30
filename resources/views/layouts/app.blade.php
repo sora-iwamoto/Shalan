@@ -12,17 +12,19 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('css/common.css')}}"/>
         @stack('home_index_styles')
+        @stack('message_index_styles')
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/bootstrap.js'])
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/common.js') }}"></script>
         @stack('home_index_script')
+        @stack('message_index_script')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
             <!-- Page Content -->
-            <main>
+            <main class="pageContent">
                 {{ $slot }}
             </main>
         </div>
