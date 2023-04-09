@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 w-full">
+        <div class="flex justify-between h-16 w-full nav">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -25,7 +25,11 @@
                         {{ __('Calendar') }}
                     </x-nav-link>
                 </div>
-
+                
+                <!--ユーザー検索-->
+                <form method="GET" action="{{route('search_index')}}" class="userSearchForm">
+                    <input type="text" class="userSearch" name="searchName" />
+                </form>
             </div>
 
             <!-- Settings Dropdown -->
@@ -51,7 +55,6 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">

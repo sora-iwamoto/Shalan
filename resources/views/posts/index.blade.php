@@ -9,5 +9,4 @@
             <input type="hidden" name="post[user_id]" value={{auth()->id()}} />
         </form>
     </div>
-    
 </div>

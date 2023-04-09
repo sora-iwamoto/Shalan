@@ -1,0 +1,24 @@
+.userEach {
+  width: 50%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  margin: 15px auto;
+  border-radius: 20px;
+  .userName {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .follow {
+      margin-left: auto;
+      margin-right: 20px;
+      margin: auto 20px auto auto;
+      height: 30px;
+      width: 80px;
+      color:  #88AA44;
+      background-color: #F6E6FC;
+      border-radius: 5px;
+  }
+}  

@@ -49,4 +49,12 @@ class User extends Authenticatable
     public function messages () {
         return $this->hasMany(Message::class);
     }
+    
+    public function getSearchUser ($name) {
+        return $this->where('name', 'like', '%' . $name . '%')->get();
+    }
+    
+    public function follows () {
+        return $this->belongsToMany(User::class, 'follows', 'user_id', 'followed_user_id');
+    }
 }

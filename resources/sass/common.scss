@@ -57,3 +57,18 @@
 .pageContent {
     margin-top:3px;
 }
+
+//ナビゲーションバー
+.nav {
+    position: relative;
+    .userSearchForm {
+        position: absolute;
+        top: 50%;
+        right: 130px;
+        transform: translateY(-50%);
+        .userSearch {
+            border-radius: 20px;
+            width: 300px;
+        }
+    }
+}

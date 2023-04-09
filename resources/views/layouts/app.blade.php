@@ -13,12 +13,16 @@
         <link rel="stylesheet" href="{{asset('css/common.css')}}"/>
         @stack('home_index_styles')
         @stack('message_index_styles')
+        @stack('search_index_styles')
+        @stack('follow_store_styles')
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/bootstrap.js'])
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/common.js') }}"></script>
         @stack('home_index_script')
         @stack('message_index_script')
+        @stack('search_index_script')
+        @stack('follow_script')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
