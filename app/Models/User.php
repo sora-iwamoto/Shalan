@@ -46,12 +46,16 @@ class User extends Authenticatable
         return $this->hasOne(Home::class);  
     }
     
+    public function mypage () {
+        return $this->hasOne(MyPage::class);  
+    }
+    
     public function messages () {
         return $this->hasMany(Message::class);
     }
     
     public function getSearchUser ($name) {
-        return $this->where('name', 'like', '%' . $name . '%')->get();
+        return $this->where('name', 'like', '%' . $name . '%')->where('name', '!=', auth()->user()->name)->get();
     }
     
     public function follows () {
