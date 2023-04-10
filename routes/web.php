@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\MyPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +23,9 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/register', function () {
+    return view('auth/register');
+})->middleware(['auth', 'verified'])->name('register');
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home_index');
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/search/user/', [SearchController::class, 'index'])->name('search_index');
     Route::post('/follow/{userId}', [FollowController::class, 'follow']);
     Route::post('/unfollow/{userId}', [ FollowController::class, 'unfollow']);
+    Route::get('/mypage', [MyPageController::class, 'index'])->name('mypage_index');
+    Route::get('/mapage/frinends/{userId}', [MyPageController::class, 'friend'])->name('mypage_friend');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

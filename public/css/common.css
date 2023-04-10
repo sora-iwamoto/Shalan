@@ -62,12 +62,12 @@
 .nav .userSearchForm {
   position: absolute;
   top: 50%;
-  right: 130px;
+  right: 20px;
   transform: translateY(-50%);
 }
 .nav .userSearchForm .userSearch {
   border-radius: 20px;
-  width: 300px;
+  width: 400px;
 }
 
 /*# sourceMappingURL=common.css.map */

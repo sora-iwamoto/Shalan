@@ -1,0 +1,41 @@
+.post {
+  max-width: 55%;
+  border: 1px solid #dcdcdc;
+  margin: 0 auto;
+  position: relative;
+}
+.post .poster {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: MS PGothic;
+}
+.post .postDate {
+  font-size: 13px;
+  color: #888888;
+}
+.post .postDelete {
+  position: absolute;
+  right: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mypage {
+  text-align: center;
+}
+.mypage .myName {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.mypage .myFriend {
+  font-size: 15px;
+  color: #72777B;
+  font-family: sans-serif;
+}
+.mypage .logout {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=index.css.map */

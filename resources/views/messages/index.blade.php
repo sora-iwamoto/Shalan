@@ -10,7 +10,7 @@
 <x-app-layout>
     <div class="message">
         <div class="messageUserBar">
-        
+            
         </div>
         <div class="messageMain">
             <div class="messageTitle">

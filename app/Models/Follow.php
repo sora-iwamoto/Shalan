@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class Follow extends Model
 {
@@ -17,5 +19,11 @@ class Follow extends Model
             $followFlg = false;
         }
         return $followFlg;
+    }
+    
+    public function myPageFollow () {
+        $followers = $this->where('user_id', auth()->user()->id)->where('followed_user_id', '!=', auth()->user()->id)->get();
+        
+        return $followers;
     }
 }
