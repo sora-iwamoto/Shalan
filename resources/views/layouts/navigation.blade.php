@@ -18,7 +18,7 @@
                     <x-nav-link class="js-modal-open">
                         {{ __('Post') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('message_index')" class="">
+                    <x-nav-link :href="route('message_home')" class="">
                         {{ __('Message') }}
                     </x-nav-link>
                     <x-nav-link class="">

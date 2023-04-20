@@ -22,6 +22,9 @@ use App\Http\Controllers\MyPageController;
 Route::get('/', function () {
     return redirect('/home');
 });
+Route::get('/dashboard', function () {
+    return redirect('/home');
+});
 
 Route::get('/register', function () {
     return view('auth/register');
@@ -31,7 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home_index');
     Route::delete('/home/{home}', [HomeController::class, 'delete'])->name('home_delete');
     Route::post('/posts', [PostController::class, 'store'])->name('post_store');
-    Route::get('/message', [MessageController::class, 'index'])->name('message_index');
+    Route::get('/message', [MessageController::class, 'messageHome'])->name('message_home');
+    Route::get('/message/{user}', [MessageController::class, 'index']);
     Route::post('/messages', [MessageController::class, 'store'])->name('message_store');
     Route::get('/search/user/', [SearchController::class, 'index'])->name('search_index');
     Route::post('/follow/{userId}', [FollowController::class, 'follow']);

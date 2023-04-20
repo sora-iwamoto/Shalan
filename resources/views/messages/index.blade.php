@@ -10,11 +10,16 @@
 <x-app-layout>
     <div class="message">
         <div class="messageUserBar">
-            
+            @foreach ($followers as $follower)
+                <a href="/message/{{$follower['followId']}}">
+                    <div>{{$follower['name']}}</div>
+                    <div>{{$follower['latestMessage']}}</div>
+                </a>
+            @endforeach
         </div>
         <div class="messageMain">
             <div class="messageTitle">
-                
+                {{$receiver->name}}
             </div>
             <div class="messageBody">
                 @foreach($messages as $message)
@@ -29,6 +34,8 @@
                 <textarea class="textBox"></textarea>
                 <input type="submit" class="submitButton" value="送信"  />
                 <input type="hidden" class="messageName" value={{auth()->user()->name}}>
+                <input type="hidden" class="messageUserId" value={{auth()->user()->id}}>
+                <input type="hidden" class="messageReceivedId" value={{$receiver->id}}>
             </div> 
         </div>
     </div>
