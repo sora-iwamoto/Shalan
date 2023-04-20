@@ -21,18 +21,25 @@ $(document).ready(function() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-        $(".submitButton").click(function () {
+   $(".submitButton").click(function() {
         $.ajax({
             url: "/messages",
             data: {
                 content: $(".textBox").val(),
                 name: $(".messageName").val(),
+                user_id: $(".messageUserId").val(),
+                receiver_id: $(".messageReceivedId").val(),
             },
             method: "POST"
+        }).done(function (){
+            $(".textBox").val('');
+            $(".messageBody").get(0).scrollTo(0, $(".messageBody").get(0).scrollHeight);
+        }).fail(function() {
+            console.error('通信エラー');
         });
-        $(".textBox").val('');
         return false;
     });
+
     
      window.Echo.channel('message')
         .listen('messageReceived', function(e) {
