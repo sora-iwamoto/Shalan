@@ -1,5 +1,5 @@
 //スクロール
-$(document).ready(function()  {
+$(document).ready(function() {
     $(".messageBody").scrollTop($(".messageBody")[0].scrollHeight - $(".messageBody").outerHeight());
 });
 
