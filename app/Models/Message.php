@@ -23,6 +23,7 @@ class Message extends Model
     
     public function getFollower (Follow $follow) {
         $followers = $follow->myPageFollow();
+        $followersInfo = []; 
         foreach ($followers as $follow) {
             $followedId = $follow->followed_user_id;
             $followingId = $follow->user_id;
@@ -41,13 +42,13 @@ class Message extends Model
             if (empty($followersLatestMessage)) {
                 $followersLatestMessage = '';
             } else {
-                $followersLatestMessage = $followersLatestMessage->cotennt;
+                $followersLatestMessage = $followersLatestMessage->content;
             }
-            
-            $followersInfo[] = ['name' => $followersName, 'latestMessage' => $followersLatestMessage, 'followId' => $followedId];
+                $followersInfo[] = ['name' => $followersName, 'latestMessage' => $followersLatestMessage, 'followId' => $followedId];
+            }
+                return $followersInfo;
         }
-        return $followersInfo;
-    }
+
     
     public function getMessage($receiver) {
         return $this -> where('user_id', auth()->user()->id)->where('receiver_id', $receiver)

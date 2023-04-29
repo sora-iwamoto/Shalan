@@ -11,15 +11,17 @@
     <div class="message">
         <div class="messageUserBar">
             @foreach ($followers as $follower)
-                <a href="/message/{{$follower['followId']}}">
-                    <div>{{$follower['name']}}</div>
-                    <div>{{$follower['latestMessage']}}</div>
+                <a href="/message/{{$follower['followId']}}" class="receiverLink">
+                    <div class="receiverName">{{$follower['name']}}</div>
+                    <div class="latestMessage">{{$follower['latestMessage']}}</div>
                 </a>
             @endforeach
         </div>
         <div class="messageMain">
             <div class="messageTitle">
-                {{$receiver->name}}
+                <span class="talkPeople">
+                    {{$receiver->name}}
+                </span>
             </div>
             <div class="messageBody">
                 @foreach($messages as $message)

@@ -1,4 +1,5 @@
 @push('home_index_styles')
+    <link href="{{ asset('css/message/messagehome.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/message/index.css') }}" rel="stylesheet" />
 @endpush
 @push('home_index_script')
@@ -11,14 +12,16 @@
     <div class="message">
         <div class="messageUserBar">
             @foreach ($followers as $follower)
-                <a href="/message/{{$follower['followId']}}">
-                    <div>{{$follower['name']}}</div>
-                    <div>{{$follower['latestMessage']}}</div>
+                <a href="/message/{{$follower['followId']}}" class="receiverLink">
+                    <div class="receiverName">{{$follower['name']}}</div>
+                    <div class="latestMessage">{{$follower['latestMessage']}}</div>
                 </a>
             @endforeach
         </div>
         <div class="messageMain">
-            
+            <div class="messageStart">
+                会話を開始しましょう！
+            </div>
         </div>
     </div>
     <script>

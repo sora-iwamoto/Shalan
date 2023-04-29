@@ -1,8 +1,16 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<link href="{{ asset('css/register/index.css') }}" rel="stylesheet" />
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/register/index.js') }}"></script>
 
-        <!-- Name -->
+<x-guest-layout>
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        @csrf
+        <div class="profile">
+            <label for="form_img" style="background-image: url({{asset('img/camera.png')}})"></label>
+            <input type="file" name="img" accept="image/*" id="form_img"/>
+            <div style="background-image: url({{asset('img/myicon.png')}}" class="profileImg"></div>
+        </div>
+        
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
