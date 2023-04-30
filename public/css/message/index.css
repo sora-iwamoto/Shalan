@@ -11,15 +11,22 @@
 }
 .message .messageUserBar .receiverLink {
   height: 70px;
+  overflow: hidden;
 }
-.message .messageUserBar .receiverLink .receiverName {
+.message .messageUserBar .receiverLink .messageUserImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 0.5px #C0C0C0;
+}
+.message .messageUserBar .receiverLink .messageUserData {
+  float: left;
+}
+.message .messageUserBar .receiverLink .messageUserData .receiverName {
   font-weight: bold;
-  padding-top: 15px;
-  padding-left: 30%;
   font-size: 16px;
 }
-.message .messageUserBar .receiverLink .latestMessage {
-  padding-left: 30%;
+.message .messageUserBar .receiverLink .messageUserData .latestMessage {
   font-size: 13px;
   color: #797979;
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Image;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -20,8 +19,8 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(Image $image): View
-    {   //$image->where()
+    public function create(): View
+    {   
         return view('auth.register');
     }
 
@@ -30,7 +29,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request, Image $image): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -42,11 +41,8 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'img_path' => Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath(),
         ]);
-        
-        $image->path = $image_url = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
-        $image->user_name = $request->name;
-        $image->save();
         
         event(new Registered($user));
 

@@ -15,6 +15,7 @@
         @stack('message_index_styles')
         @stack('search_index_styles')
         @stack('follow_store_styles')
+        @stack('mypage_index_styles')
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/bootstrap.js'])
         <script src="{{ asset('js/jquery.min.js') }}"></script>

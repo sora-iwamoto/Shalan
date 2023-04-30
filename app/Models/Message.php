@@ -28,6 +28,7 @@ class Message extends Model
             $followedId = $follow->followed_user_id;
             $followingId = $follow->user_id;
             $followersName = User::find($followedId)->name;
+            $followerImg = User::find($followedId)->img_path;
             $followersLatestMessage = $this
             ->where(function ($message) use ($followedId, $followingId){
                 $message->where('user_id', $followedId)->where('receiver_id', $followingId);
@@ -44,7 +45,7 @@ class Message extends Model
             } else {
                 $followersLatestMessage = $followersLatestMessage->content;
             }
-                $followersInfo[] = ['name' => $followersName, 'latestMessage' => $followersLatestMessage, 'followId' => $followedId];
+                $followersInfo[] = ['name' => $followersName, 'latestMessage' => $followersLatestMessage, 'followId' => $followedId, 'img_path' => $followerImg];
             }
                 return $followersInfo;
         }

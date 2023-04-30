@@ -13,8 +13,11 @@
         <div class="messageUserBar">
             @foreach ($followers as $follower)
                 <a href="/message/{{$follower['followId']}}" class="receiverLink">
-                    <div class="receiverName">{{$follower['name']}}</div>
-                    <div class="latestMessage">{{$follower['latestMessage']}}</div>
+                    <image src="{{!empty($follower['img_path']) ? asset($follower['img_path']) : 'https://res.cloudinary.com/depnui5g2/image/upload/v1682832632/myicon_hfjduw.png'}}" class="messageUserImg messageUserData"></image>
+                    <div class="messageUserData">
+                        <div class="receiverName">{{$follower['name']}}</div>
+                        <div class="latestMessage">{{$follower['latestMessage']}}</div>
+                    </div>
                 </a>
             @endforeach
         </div>

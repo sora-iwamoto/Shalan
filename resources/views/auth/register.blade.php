@@ -6,9 +6,9 @@
     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
         <div class="profile">
-            <label for="form_img" style="background-image: url({{asset('img/camera.png')}})"></label>
+            <label for="form_img" style="background-image: url('https://res.cloudinary.com/depnui5g2/image/upload/v1682832633/camera_nrtvky.png')"></label>
             <input type="file" name="img" accept="image/*" id="form_img"/>
-            <div style="background-image: url({{asset('img/myicon.png')}}" class="profileImg"></div>
+            <div style="background-image: url('https://res.cloudinary.com/depnui5g2/image/upload/v1682832632/myicon_hfjduw.png')" class="profileImg"></div>
         </div>
         
         <div>
