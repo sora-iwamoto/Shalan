@@ -26,6 +26,7 @@ class MessageController extends Controller
         
         return response()->json([]);
     }
+    
     public function messageHome(Message $message, Follow $follow) {
         return view('messages/messagehome')->with(['followers' => $message->getFollower($follow)]);
     }

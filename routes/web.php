@@ -8,6 +8,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\CalendarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/unfollow/{userId}', [ FollowController::class, 'unfollow']);
     Route::get('/mypage', [MyPageController::class, 'index'])->name('mypage_index');
     Route::get('/mapage/frinends/{userId}', [MyPageController::class, 'friend'])->name('mypage_friend');
+    Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar_index');
+    Route::get('/calendar/plan/', [CalendarController::class, 'plan'])->name('calendar_plan');
+    Route::get('/calendar/members/{member}', [CalendarController::class, 'member'])->name('calendar_member');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

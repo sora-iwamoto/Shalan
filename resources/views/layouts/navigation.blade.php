@@ -20,8 +20,8 @@
                     </x-nav-link>
                     <x-nav-link :href="route('message_home')" class="">
                         {{ __('Message') }}
-                    </x-nav-link>
-                    <x-nav-link class="">
+                    </x-nav-link>    
+                    <x-nav-link :href="route('calendar_index')">
                         {{ __('Calendar') }}
                     </x-nav-link>
                     <x-nav-link :href="route('mypage_index')" class="">

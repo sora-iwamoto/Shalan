@@ -1,0 +1,37 @@
+form {
+    width: fit-content;
+    margin: auto;
+    input {
+        border: none;
+    }
+    .date {
+        display: flex;
+        .to {
+            line-height: 50px;
+            margin: 0 20px;
+        }
+        startDate, endDate {
+            height: 50px;
+        }
+    }
+    .searchMember {
+        display: none;
+        .memberList {
+            position: absolute;
+            background-color: white;
+            border: solid #C0C0C0 1px;
+            width: 20%;
+            list-style-type: none;
+            .eachMember {
+                position: relative;
+                cursor: pointer;
+            }
+        }
+    }
+    .participants {
+        display: none;
+    }
+    textarea {
+      resize: none;
+    }
+}

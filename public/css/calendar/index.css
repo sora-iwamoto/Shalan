@@ -1,0 +1,50 @@
+.calendarHead {
+  text-align: center;
+}
+.calendarHead .CalendarTitle {
+  font-size: 40px;
+}
+.calendarHead button {
+  border-radius: 50%;
+  background-color: #797979;
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+table {
+  height: 75vh;
+  margin: 0 auto;
+}
+table .day {
+  width: 110px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid;
+}
+table .day form {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+table .day form .lastMonth, table .day form .nextMonth {
+  color: #949593;
+}
+table .day form input[type=submit] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 50%;
+}
+
+/*# sourceMappingURL=index.css.map */
