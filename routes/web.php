@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/search/user/', [SearchController::class, 'index'])->name('search_index');
     Route::post('/follow/{userId}', [FollowController::class, 'follow']);
     Route::post('/unfollow/{userId}', [ FollowController::class, 'unfollow']);
+    Route::get('/calendar/', [CalendarController::class, 'index'])->name('calendar_index');
     Route::get('/mypage', [MyPageController::class, 'index'])->name('mypage_index');
     Route::get('/mapage/frinends/{userId}', [MyPageController::class, 'friend'])->name('mypage_friend');
     Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar_index');
