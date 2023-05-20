@@ -1,0 +1,39 @@
+form {
+  width: fit-content;
+  margin: auto;
+}
+form input {
+  border: none;
+}
+form .date {
+  display: flex;
+}
+form .date .to {
+  line-height: 50px;
+  margin: 0 20px;
+}
+form .date startDate, form .date endDate {
+  height: 50px;
+}
+form .searchMember {
+  display: none;
+}
+form .searchMember .memberList {
+  position: absolute;
+  background-color: white;
+  border: solid #C0C0C0 1px;
+  width: 20%;
+  list-style-type: none;
+}
+form .searchMember .memberList .eachMember {
+  position: relative;
+  cursor: pointer;
+}
+form .participants {
+  display: none;
+}
+form textarea {
+  resize: none;
+}
+
+/*# sourceMappingURL=plan.css.map */

@@ -20,8 +20,13 @@
                     </x-nav-link>
                     <x-nav-link :href="route('message_home')" class="">
                         {{ __('Message') }}
+<<<<<<< HEAD
                     </x-nav-link>
                     <x-nav-link :href="route('calendar_index')" class="">
+=======
+                    </x-nav-link>    
+                    <x-nav-link :href="route('calendar_index')">
+>>>>>>> e0546c17c16c0b2498d339858229ee9991e040a4
                         {{ __('Calendar') }}
                     </x-nav-link>
                     <x-nav-link :href="route('mypage_index')" class="">
