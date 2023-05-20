@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/follow/{userId}', [FollowController::class, 'follow']);
     Route::post('/unfollow/{userId}', [ FollowController::class, 'unfollow']);
     Route::get('/calendar/', [CalendarController::class, 'index'])->name('calendar_index');
+    Route::get('/calendar/plan/', [CalendarController::class, 'plan'])->name('calendar_plan');
     Route::get('/mypage', [MyPageController::class, 'index'])->name('mypage_index');
     Route::get('/mapage/frinends/{userId}', [MyPageController::class, 'friend'])->name('mypage_friend');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

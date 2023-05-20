@@ -1,0 +1,51 @@
+.calendarHead {
+    text-align: center;
+    .CalendarTitle {
+        font-size: 40px;
+    }
+    button {
+        border-radius: 50%;
+        background-color: #797979;
+        color: white;
+        width: 30px;
+        height: 30px;
+    }
+}
+table {
+    height: 75vh;
+    margin: 0 auto;
+    .day {
+        width: 110px;
+        text-align: center;
+        vertical-align: top;
+        border: 1px solid;
+        form {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: relative;
+            .lastMonth, .nextMonth {
+                color: #949593;
+            }
+            input[type='submit'] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+form {
+  display:flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 50%;
+  input {
+  }
+}
