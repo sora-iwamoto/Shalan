@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/mapage/frinends/{userId}', [MyPageController::class, 'friend'])->name('mypage_friend');
     Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar_index');
     Route::get('/calendar/plan/', [CalendarController::class, 'plan'])->name('calendar_plan');
+    Route::post('/plan/schedule', [CalendarController::class, 'schedule'])->name('calendar_schedule');
     Route::get('/calendar/members/{member}', [CalendarController::class, 'member'])->name('calendar_member');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

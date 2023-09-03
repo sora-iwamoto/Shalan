@@ -19,14 +19,13 @@ table {
         text-align: center;
         vertical-align: top;
         border: 1px solid;
+        position: relative;
         form {
             height: 100%;
             width: 100%;
             display: block;
-            position: relative;
-            .lastMonth, .nextMonth {
-                color: #949593;
-            }
+            position: absolute;
+            top: 0;
             input[type='submit'] {
                 position: absolute;
                 top: 0;
@@ -35,6 +34,9 @@ table {
                 width: 100%;
                 cursor: pointer;
             }
+        }
+        .lastMonth, .nextMonth {
+                color: #949593;
         }
     }
 }
