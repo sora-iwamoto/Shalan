@@ -1,5 +1,13 @@
+var today = new Date();
+var baseDate = new Date(today.getFullYear(), today.getMonth(), 1);
 $(document).ready(function () {
-   
+   showCalendar(today);
+   $('.back').on('click', function () {
+      backMonth();
+   });
+   $('.next').on('click', function () {
+      nextMonth();
+   });
 });
    
 

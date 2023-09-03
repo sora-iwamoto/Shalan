@@ -21,7 +21,6 @@ class CalendarController extends Controller
     }
     
     public function member (User $user, $member) {
-        dd();
         $member = $user->getSearchUser ($member);
         return response()->json($member);
     }
