@@ -21,14 +21,15 @@ table .day {
   text-align: center;
   vertical-align: top;
   border: 1px solid;
-  position: relative;
 }
 table .day form {
   height: 100%;
   width: 100%;
   display: block;
-  position: absolute;
-  top: 0;
+  position: relative;
+}
+table .day form .lastMonth, table .day form .nextMonth {
+  color: #949593;
 }
 table .day form input[type=submit] {
   position: absolute;
@@ -37,9 +38,6 @@ table .day form input[type=submit] {
   height: 100%;
   width: 100%;
   cursor: pointer;
-}
-table .day .lastMonth, table .day .nextMonth {
-  color: #949593;
 }
 
 form {
