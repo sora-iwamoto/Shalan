@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+$(document).ready(function () {
+   
+});
+   
+=======
 var today = new Date();
 var baseDate = new Date(today.getFullYear(), today.getMonth(), 1);
 $(document).ready(function () {
@@ -64,3 +70,4 @@ function backMonth () {
    baseDate.setMonth(baseDate.getMonth() - 1);
    showCalendar(baseDate);
 }
+>>>>>>> e0546c17c16c0b2498d339858229ee9991e040a4
