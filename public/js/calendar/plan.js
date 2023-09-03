@@ -1,26 +1,36 @@
 $(document).ready(function () {
    $('.startDate').datepicker({
       changeMonth: true,
-      dateFormat: ('yy年mm月dd日')
+      onSelect: function (dateText) {
+         $('#startDate').val(dateText);
+      },
       });
    $('.endDate').datepicker({
       changeMonth: true,
-      dateFormat: ('yy年mm月dd日')
+      onSelect: function (dateText) {
+         $('#endDate').val(dateText);
+      },
       });
       
    $('.selectTime').on('click', function () {
-      var select = '<select>';
+      var selectStart = $("<select name='plan[startTime]'>");
+      var selectEnd = $("<select name='plan[endTime]'>");
+      
       var date = new Date(2023, 1, 1, 0, 0);
       while (date.getDate() == 1) {
-         select += "<option value='" + date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0') + "'>" + date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0') + "</option>";
+         var optionValue = date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0');
+         var option = $("<option>").attr("value", optionValue).text(optionValue);
+         console.log(option);
+         selectStart.append(option);
+         selectEnd.append(option.clone());
+         
          date.setMinutes(date.getMinutes() + 10);
       }
       
-      select += '</select>';
-      $('.start').append(select);
-      $('.end').append(select);
-      $('.selectTime').remove();
+      $('.start').append(selectStart);
+      $('.end').append(selectEnd);
    });
+   
    $('.member').on('input', function () {
       if (($('.member').val()) !== '') {
       $.ajax({
@@ -70,16 +80,7 @@ $(document).ready(function () {
       return false;
    });
    
+   $('.submitBtn').click(function() {
+      
+   })
 });
-
-function initMap() {
-   const input = document.getElementById("place");
-   const searchBox = new google.maps.places.SearchBox(input);
-
-
-   searchBox.addListener('places_changed', function() {
-   let places = searchBox.getPlaces();
-   input.value = places[0]['name'] + ', ' + places[0]['formatted_address'];
-});
-   
-}

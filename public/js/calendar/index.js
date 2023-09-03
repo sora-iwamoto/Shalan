@@ -36,15 +36,15 @@ function createCalendar(year, month) {
      var week = '<tr>';
      for (var j = 0; j < 7; j++) {
         if (i === 0 && j < firstDayOfWeek) {
-           var lastMonthDay = "<td class='day'>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + lastMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (lastMonthLastDate - firstDayOfWeek + j + 1).toString().padStart(2, '0') + "' />" + "<input class='lastMonth' type='button' name='date' value='" + (lastMonthLastDate - firstDayOfWeek + j + 1) + "' />" + "<input type='submit' value=''>" + '</form>' + '</td>';
+           var lastMonthDay = "<td class='day'>" + "<div class='lastMonth'>" + (lastMonthLastDate - firstDayOfWeek + j + 1) + "</div>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + lastMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (lastMonthLastDate - firstDayOfWeek + j + 1).toString().padStart(2, '0') + "' />" + "<input type='submit' value=''>" + '</form>' + '</td>';
            week += lastMonthDay;
         } else if (cnt >= lastDate) {
            cnt++;
-           var nextMonthDay = "<td class='day'>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + nextMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (cnt - lastDate).toString().padStart(2, '0') + "'/>" + "<input class='nextMonth' type='button' name='date' value='" + (cnt - lastDate) + "'/>" + "<input type='submit' value=''>" + '</form>' + '</td>';
+           var nextMonthDay = "<td class='day'>" + "<div class='nextMonth'>" + (cnt - lastDate)　+ "</div>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + nextMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (cnt - lastDate).toString().padStart(2, '0') + "'/>" + "<input type='submit' value=''>" + '</form>' + '</td>';
            week += nextMonthDay;
         } else {
            cnt++;
-           var thisMonthDay = "<td class='day'>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + thisMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (cnt).toString().padStart(2, '0') + "' />" + "<input class='thisMonth' type='button' name='date' value='" + (cnt) + "' />" + "<input type='submit' value=''>" + '</form>' + '</td>';
+           var thisMonthDay = "<td class='day'>" + "<div>" + cnt　+ "</div>" + "<form method='get' action='/calendar/plan'>" + "<input type='hidden' name='year' value='" + thisYear + "'>" + "<input type='hidden' name='month' value='" + thisMonth.toString().padStart(2, '0') + "'>" + "<input type='hidden' name='date' value='" + (cnt).toString().padStart(2, '0') + "' />" + "<input type='submit' value=''>" + '</form>' + '</td>';
            
            week += thisMonthDay;
         }
